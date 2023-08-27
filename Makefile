@@ -1,11 +1,11 @@
 build:
-	docker compose build postgres && mvn package;
+	docker compose build;
 
 database:
 	docker compose build postgres && docker compose up -d postgres;
 
 app:
-	mvn package && java -jar ./target/todo_app_list.jar;
+	docker compose build app && docker compose up -d app;
 
 run:
 	make database && make app;

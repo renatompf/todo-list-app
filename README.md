@@ -114,9 +114,3 @@ DELETE localhost:8080/tasks/{taskId}
  make run
  ```
 And that should run the both containers.
-
-### Problems:
-
-In the final stage of this project I wasn't able, for same reason, connecting the app container to the postgres container.
-So I was forced to deploy the database on docker and run the application locally, instead of doing it via docker.
-

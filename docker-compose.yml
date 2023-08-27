@@ -9,8 +9,6 @@ services:
       POSTGRES_PASSWORD: root
     ports:
       - "5432:5432"
-    networks:
-      - my-network
 
   app:
     container_name: app
@@ -22,8 +20,6 @@ services:
       - postgres
     ports:
       - "8080:8080"
-    networks:
-      - my-network
 
 networks:
   my-network:
