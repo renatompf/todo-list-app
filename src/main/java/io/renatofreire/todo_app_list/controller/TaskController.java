@@ -26,7 +26,7 @@ public class TaskController {
     }
 
     @GetMapping("/by-user/{userId}")
-    public List<TaskDTO> getAll(@PathVariable("userId") Long userId){
+    public List<TaskDTO> getAllByUser(@PathVariable("userId") Long userId){
         return taskService.getAllByUser(userId);
     }
 

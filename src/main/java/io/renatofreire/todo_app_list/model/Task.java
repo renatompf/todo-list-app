@@ -15,7 +15,7 @@ public class Task {
     private TaskStatus status;
     @ManyToOne
     @JoinColumn(name="userId", nullable = false)
-    private User assignee;
+    private User user;
 
     public Task() {
     }
@@ -23,7 +23,7 @@ public class Task {
     public Task(String description, User user) {
         this.description = description;
         this.status = TaskStatus.TODO;
-        this.assignee = user;
+        this.user = user;
     }
 
 
@@ -44,11 +44,11 @@ public class Task {
     }
 
     public User getUser() {
-        return assignee;
+        return user;
     }
 
     public void setUser(User user) {
-        this.assignee = user;
+        this.user = user;
     }
 
     public TaskStatus getStatus() {

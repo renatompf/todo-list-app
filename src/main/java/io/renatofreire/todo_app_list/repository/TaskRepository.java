@@ -14,7 +14,7 @@ import java.util.UUID;
 public interface TaskRepository extends JpaRepository<Task, Long> {
     boolean existsByDescriptionAndStatus(String description, TaskStatus status);
 
-    @Query(value = "SELECT t FROM Task t WHERE t.assignee.id = :userId")
+    @Query(value = "SELECT t FROM Task t WHERE t.user.id = :userId")
     List<Task> findAllByUserId(@Param("userId")Long userId);
 
 }
